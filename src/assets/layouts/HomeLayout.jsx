@@ -1,3 +1,5 @@
+//HomeLayout.jsx
+
 import Header from "../components/Header";
 
 const HomeLayout = () => {
