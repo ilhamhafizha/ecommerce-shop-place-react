@@ -21,7 +21,21 @@ A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and
 - 🛆 React Hooks plugin
 
 ---
+## Screenshot
+![image](https://github.com/user-attachments/assets/a73a3282-5c8a-4963-8571-155f2260847f)
+![image](https://github.com/user-attachments/assets/c0e1a6ba-31c6-4540-b9ab-c9b16189622b)
 
+## 📸 Screenshot
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a73a3282-5c8a-4963-8571-155f2260847f" alt="Homepage" width="600"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c0e1a6ba-31c6-4540-b9ab-c9b16189622b" alt="Detail Page" width="600"/>
+</p>
+
+---
 ## 🚀 Fitur Utama
 
 - Halaman beranda dengan daftar produk
