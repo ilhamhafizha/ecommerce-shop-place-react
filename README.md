@@ -1,6 +1,6 @@
 # 🏍️ Ecommerce Shop Place (React)
 
-A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and **Vite**, featuring product listing, detail pages, dark mode, routing, and more.
+A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and **Vite**, featuring product listing, detail pages, dark mode, and routing.
 
 ---
 
@@ -63,9 +63,3 @@ http://localhost:5173
 ```
 
 ---
-
-## 🧠 Catatan Tambahan
-
-- Gambar produk diambil dari [DummyJSON](https://dummyjson.com/products).
-- Semua state global seperti `DarkMode` dikelola dengan Context API.
-- Gambar menggunakan `lazy loading` untuk performa yang lebih baik.
