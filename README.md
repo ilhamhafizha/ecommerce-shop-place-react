@@ -6,7 +6,7 @@ A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and
 
 ## 🔗 Live Preview
 
-
+https://ecommerce-shop-place-react.vercel.app/
 
 ---
 
@@ -37,9 +37,9 @@ A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and
 - Halaman beranda dengan daftar produk
 - Detail produk dinamis berdasarkan ID
 - Responsif di mobile & desktop
-- Pencarian dan kategori (fitur tambahan)
+- Pencarian kategori (fitur tambahan)
 - Dark Mode toggle (disimpan ke `localStorage`)
-- Routing halaman: Home, Login, Register, Detail
+- Routing halaman: Home, Login, Register, Detail , Checkout
 - Konsumsi data dari [DummyJSON API](https://dummyjson.com)
 
 ---
@@ -57,8 +57,6 @@ cd ecommerce-shop-place-react
 
 ```bash
 npm install react react-dom react-router-dom react-bootstrap bootstrap react-icons sweetalert2
-
-
 ```
 
 ### 3. Jalankan project
@@ -74,3 +72,15 @@ http://localhost:5173
 ```
 
 ---
+### 4. Deploy
+```bash
+npm run build
+serve -s build
+```
+Aplikasi akan berjalan di:
+
+```
+Local:    http://localhost:3000      │
+Network:  http://192.168.84.1:3000 
+```
+
