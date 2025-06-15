@@ -6,7 +6,7 @@ A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and
 
 ## 🔗 Live Preview
 
-
+https://ecommerce-shop-place-react.vercel.app/
 
 ---
 
@@ -74,3 +74,15 @@ http://localhost:5173
 ```
 
 ---
+### 4. Deploy
+```bash
+npm run build
+serve -s build
+```
+Aplikasi akan berjalan di:
+
+```
+Local:    http://localhost:3000      │
+Network:  http://192.168.84.1:3000 
+```
+
