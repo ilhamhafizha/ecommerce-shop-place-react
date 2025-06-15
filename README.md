@@ -1,12 +1,71 @@
-# React + Vite
+# 🏍️ Ecommerce Shop Place (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce web app built with **React**, **Bootstrap**, and **Vite**, featuring product listing, detail pages, dark mode, routing, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Preview
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+## 🛆 Tech Stack
+
+- ⚛️ React 19
+- 💅 Bootstrap 5
+- 🧱 React Router DOM 7
+- 🎨 Dark Mode Context
+- 🩱 React-Bootstrap Components
+- ⚡ Vite for dev build
+- 🛆 React Hooks plugin
+
+---
+
+## 🚀 Fitur Utama
+
+- Halaman beranda dengan daftar produk
+- Detail produk dinamis berdasarkan ID
+- Responsif di mobile & desktop
+- Pencarian dan kategori (fitur tambahan)
+- Dark Mode toggle (disimpan ke `localStorage`)
+- Routing halaman: Home, Login, Register, Detail
+- Konsumsi data dari [DummyJSON API](https://dummyjson.com)
+
+---
+
+## 🛠️ Cara Install & Menjalankan
+
+### 1. Clone repository
+
+```bash
+git clone https://github.com/ilhamhafizha/ecommerce-shop-place-react.git
+cd ecommerce-shop-place-react
+```
+
+### 2. Install dependencies
+
+```bash
+npm install react react-dom react-router-dom react-bootstrap bootstrap react-icons
+
+```
+
+### 3. Jalankan project
+
+```bash
+npm run dev
+```
+
+Aplikasi akan berjalan di:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🧠 Catatan Tambahan
+
+- Gambar produk diambil dari [DummyJSON](https://dummyjson.com/products).
+- Semua state global seperti `DarkMode` dikelola dengan Context API.
+- Gambar menggunakan `lazy loading` untuk performa yang lebih baik.

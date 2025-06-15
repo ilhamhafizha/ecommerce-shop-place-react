@@ -1,3 +1,4 @@
+// HomeLayout.jsx
 import { useContext, useEffect, useState } from "react";
 import Header from "../components/Header";
 import CarouselSection from "../components/CarouselSection";
@@ -11,7 +12,6 @@ const HomeLayout = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
-
   const { isDark } = useContext(ThemeContext);
 
   useEffect(() => {
@@ -27,57 +27,44 @@ const HomeLayout = () => {
       });
   }, []);
 
-  // Filter kategori
   const filteredProducts =
     selectedCategory === "all" ? products : products.filter((p) => p.category === selectedCategory);
 
-  // Total halaman
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-
-  // Data produk per halaman
   const paginatedProducts = filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className={`d-flex flex-column min-vh-100 ${isDark ? "bg-dark text-white" : ""}`}>
-      {/* 🔝 Header */}
       <Header />
-
-      {/* 🧱 Main */}
       <main className="flex-fill">
         <CarouselSection />
 
         <div className="container py-4">
-          {/* 🎛️ Filter Kategori */}
-          <div className="mb-4">
-            <div>
-              <label htmlFor="categoryFilter" className="form-label fw-bold">
-                Product
-              </label>
-            </div>
-            <div className="d-flex justify-content-end">
-              <label htmlFor="categoryFilter" className="form-label fw-bold">
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h4 className="fw-bold">Product</h4>
+            <div className="d-flex align-items-center gap-2">
+              <label htmlFor="categoryFilter" className="form-label mb-0">
                 Filter by Category
               </label>
+              <select
+                id="categoryFilter"
+                className={`form-select ${isDark ? "bg-dark text-white border-secondary" : ""}`}
+                value={selectedCategory}
+                onChange={(e) => {
+                  setSelectedCategory(e.target.value);
+                  setCurrentPage(1);
+                }}
+              >
+                <option value="all">All</option>
+                {[...new Set(products.map((p) => p.category))].map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
             </div>
-            <select
-              id="categoryFilter"
-              className={`form-select ${isDark ? "bg-dark text-white border-secondary" : " "}`}
-              value={selectedCategory}
-              onChange={(e) => {
-                setSelectedCategory(e.target.value);
-                setCurrentPage(1); // Reset ke halaman pertama
-              }}
-            >
-              <option value="all">All</option>
-              {[...new Set(products.map((p) => p.category))].map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
           </div>
 
-          {/* ⏳ Loading */}
           {loading ? (
             <div className="text-center py-5">
               <div className="spinner-border text-primary" role="status">
@@ -86,7 +73,6 @@ const HomeLayout = () => {
             </div>
           ) : (
             <>
-              {/* 🛍️ Produk */}
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 {paginatedProducts.map((product) => (
                   <div key={product.id} className="col">
@@ -97,8 +83,9 @@ const HomeLayout = () => {
                       <div className={`card h-100 shadow-sm ${isDark ? "bg-secondary border-light" : ""}`}>
                         <img
                           src={product.thumbnail}
-                          className="card-img-top"
                           alt={product.title}
+                          className="card-img-top"
+                          loading="lazy"
                           style={{ height: "200px", objectFit: "cover" }}
                         />
                         <div className="card-body d-flex flex-column">
@@ -122,27 +109,25 @@ const HomeLayout = () => {
                 ))}
               </div>
 
-              {/* 📄 Pagination */}
+              {/* Pagination */}
               <div className="d-flex justify-content-center mt-4">
                 <nav>
                   <ul className="pagination">
-                    {/* Prev */}
                     <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
                       <button className="page-link" onClick={() => setCurrentPage((prev) => prev - 1)}>
                         Previous
                       </button>
                     </li>
-
-                    {/* Halaman */}
                     {[...Array(totalPages)].map((_, index) => (
                       <li key={index} className={`page-item ${currentPage === index + 1 ? "active" : ""}`}>
-                        <button className="btn btn-danger page-link" onClick={() => setCurrentPage(index + 1)}>
+                        <button
+                          className={`page-link ${isDark ? "bg-danger text-white" : "btn btn-outline-primary"}`}
+                          onClick={() => setCurrentPage(index + 1)}
+                        >
                           {index + 1}
                         </button>
                       </li>
                     ))}
-
-                    {/* Next */}
                     <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
                       <button className="page-link" onClick={() => setCurrentPage((prev) => prev + 1)}>
                         Next
@@ -155,8 +140,6 @@ const HomeLayout = () => {
           )}
         </div>
       </main>
-
-      {/* 🔚 Footer */}
       <Footer />
     </div>
   );
