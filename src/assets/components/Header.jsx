@@ -4,6 +4,7 @@ import logoDark from "../../assets/img/black-logo.png";
 import { FaSearch, FaShoppingCart, FaMoon, FaSun } from "react-icons/fa";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
@@ -27,8 +28,8 @@ const Header = () => {
         {/*CartIcon*/}
         <FaShoppingCart className="fs-5 text-white" />
         {/* AuthButtons */}
-        <button className="btn text-white">Masuk</button>
-        <button className="btn text-white">Daftar</button>
+        <Link to="/login" className="btn text-white">Masuk</Link>
+        <Link to="/register" className="btn text-white">Daftar</Link>
         {/* Theme Toggle Button */}
         <button onClick={toggleTheme} className="btn btn-outline-light">
           {isDark ? <FaSun /> : <FaMoon />}
