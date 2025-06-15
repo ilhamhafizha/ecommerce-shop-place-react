@@ -5,6 +5,7 @@ import "./theme.css"; // dark/light mode override
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPage from "./assets/pages/LoginPage";
 import RegisterPage from "./assets/pages/RegisterPage";
+import DetailPage from "./assets/pages/DetailPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/detail/:id" element={<DetailPage />} />
       </Routes>
     </Router>
   );
