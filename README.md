@@ -37,9 +37,9 @@ https://ecommerce-shop-place-react.vercel.app/
 - Halaman beranda dengan daftar produk
 - Detail produk dinamis berdasarkan ID
 - Responsif di mobile & desktop
-- Pencarian dan kategori (fitur tambahan)
+- Pencarian kategori (fitur tambahan)
 - Dark Mode toggle (disimpan ke `localStorage`)
-- Routing halaman: Home, Login, Register, Detail
+- Routing halaman: Home, Login, Register, Detail , Checkout
 - Konsumsi data dari [DummyJSON API](https://dummyjson.com)
 
 ---
@@ -57,8 +57,6 @@ cd ecommerce-shop-place-react
 
 ```bash
 npm install react react-dom react-router-dom react-bootstrap bootstrap react-icons sweetalert2
-
-
 ```
 
 ### 3. Jalankan project
