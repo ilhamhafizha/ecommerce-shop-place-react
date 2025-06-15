@@ -77,7 +77,8 @@ const DetailPage = () => {
                       width: "70px",
                       height: "70px",
                       cursor: "pointer",
-                      border: activeImage === index ? "2px solid rgb(244, 67, 54)" : "1px solid #ccc",
+                      border:
+                        activeImage === index ? "2px solid rgb(244, 67, 54)" : "1px solid #ccc",
                     }}
                     onClick={() => setActiveImage(index)}
                   >
@@ -124,7 +125,11 @@ const DetailPage = () => {
                     fontSize: "14px",
                   }}
                 >
-                  {product.stock > 10 ? "In Stock" : product.stock > 0 ? "Low Stock" : "Out of Stock"}
+                  {product.stock > 10
+                    ? "In Stock"
+                    : product.stock > 0
+                    ? "Low Stock"
+                    : "Out of Stock"}
                 </span>
 
                 <div className="d-flex align-items-center gap-1 text-danger">
@@ -145,12 +150,17 @@ const DetailPage = () => {
                     <del className="text-muted">
                       ${(product.price / (1 - product.discountPercentage / 100)).toFixed(2)}
                     </del>
-                    <span className="badge bg-danger">{product.discountPercentage.toFixed(0)}% OFF</span>
+                    <span className="badge bg-danger">
+                      {product.discountPercentage.toFixed(0)}% OFF
+                    </span>
                   </>
                 )}
               </div>
 
-              <p className="border-top border-bottom py-3 mb-3" style={{ color: isDark ? "#ccc" : "#555" }}>
+              <p
+                className="border-top border-bottom py-3 mb-3"
+                style={{ color: isDark ? "#ccc" : "#555" }}
+              >
                 {product.description}
               </p>
 
@@ -179,6 +189,21 @@ const DetailPage = () => {
               <div className="d-flex flex-column flex-md-row gap-3">
                 <button className="btn btn-danger w-100 w-md-auto">Add to Cart</button>
                 <button className="btn btn-outline-danger w-100 w-md-auto">♡ Wishlist</button>
+                <Link
+                  to="/checkout"
+                  state={{
+                    product: {
+                      id: product.id,
+                      title: product.title,
+                      price: product.price,
+                      quantity: 1,
+                      thumbnail: product.thumbnail,
+                    },
+                  }}
+                  className="btn btn-danger w-100 w-md-auto"
+                >
+                  Beli Sekarang
+                </Link>
               </div>
             </div>
           </div>

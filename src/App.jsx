@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginPage from "./assets/pages/LoginPage";
 import RegisterPage from "./assets/pages/RegisterPage";
 import DetailPage from "./assets/pages/DetailPage";
+import CheckoutPage from "./assets/pages/CheckoutPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
     </Router>
   );
