@@ -1,13 +1,14 @@
-// src/pages/CheckoutPage.jsx
-import React from "react";
+import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { isDark } = useContext(ThemeContext);
   const product = location.state?.product;
 
   const handlePayment = () => {
@@ -35,13 +36,13 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className={`d-flex flex-column min-vh-100 ${isDark ? "bg-dark text-white" : ""}`}>
       <Header />
       <main className="flex-fill container py-5">
         <h2 className="mb-4">Checkout</h2>
-        <div className="card p-4">
+        <div className={`card p-4 ${isDark ? "bg-secondary text-white border-light" : ""}`}>
           {product ? (
-            <div className="card p-4">
+            <>
               <h5>Ringkasan Pesanan</h5>
               <div className="d-flex align-items-center gap-3 mb-3">
                 <img
@@ -58,7 +59,7 @@ const CheckoutPage = () => {
               <button className="btn btn-danger mt-3" onClick={handlePayment}>
                 Bayar Sekarang
               </button>
-            </div>
+            </>
           ) : (
             <p>Data produk tidak tersedia. Silakan pilih produk terlebih dahulu.</p>
           )}
