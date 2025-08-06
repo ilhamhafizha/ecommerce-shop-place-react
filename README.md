@@ -56,7 +56,7 @@ cd ecommerce-shop-place-react
 ### 2. Install dependencies
 
 ```bash
-npm install react react-dom react-router-dom react-bootstrap bootstrap react-icons sweetalert2
+npm install 
 ```
 
 ### 3. Jalankan project
